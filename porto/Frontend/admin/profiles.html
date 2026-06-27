@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Admin Portofolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/profiles.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon"><i class="fas fa-code"></i></div>
+            <div><h2>Porto Admin</h2><span>Control Panel</span></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-label">Menu Utama</div>
+            <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="profiles.html" class="active"><i class="fas fa-user-circle"></i> Profil</a>
+            <a href="skills.html"><i class="fas fa-code"></i> Skills</a>
+            <a href="experience.html"><i class="fas fa-briefcase"></i> Pengalaman</a>
+            <a href="projects.html"><i class="fas fa-folder-open"></i> Proyek</a>
+            <div class="nav-label" style="margin-top:16px">Lainnya</div>
+            <a href="/"><i class="fas fa-globe"></i> Lihat Website</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 id="page-title">Profil</h1>
+                <p id="page-subtitle">Kelola data profil portofolio Anda</p>
+            </div>
+            <div class="topbar-right">
+                <div class="admin-badge">
+                    <div class="avatar" id="admin-avatar">A</div>
+                    <span id="admin-name">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="profile-layout">
+
+                <!-- Avatar Card -->
+                <div class="profile-avatar-card">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-placeholder" id="avatar-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <img id="avatar-img" class="avatar-img" src="" alt="Foto Profil">
+                        <label class="avatar-upload-btn" id="avatar-upload-btn" title="Ganti Foto">
+                            <i class="fas fa-camera"></i>
+                        </label>
+                        <input type="file" id="photo-file" accept="image/*" style="display:none">
+                        <input type="hidden" id="foto_url">
+                    </div>
+                    <h3 id="card-name">Nama Anda</h3>
+                    <p id="card-prodi">Program Studi</p>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span id="card-email">email@example.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-university"></i>
+                        <span id="card-uni">Universitas</span>
+                    </div>
+                    <div class="upload-progress" id="upload-progress">
+                        <div class="spinner"></div> Mengupload...
+                    </div>
+                </div>
+
+                <!-- Form Profil -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-edit" style="color:#2563eb;margin-right:8px"></i>Edit Data Profil</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nama_lengkap">Nama Lengkap *</label>
+                                    <input type="text" id="nama_lengkap" placeholder="Masukkan nama lengkap" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nama_panggilan">Nama Panggilan</label>
+                                    <input type="text" id="nama_panggilan" placeholder="Nama panggilan">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tempat_lahir">Tempat Lahir</label>
+                                    <input type="text" id="tempat_lahir" placeholder="Kota lahir">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                                    <input type="date" id="tanggal_lahir">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="email@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="telepon">Telepon</label>
+                                    <input type="text" id="telepon" placeholder="08xx-xxxx-xxxx">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="universitas">Universitas</label>
+                                <input type="text" id="universitas" placeholder="Nama universitas">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fakultas">Fakultas</label>
+                                    <input type="text" id="fakultas" placeholder="Nama fakultas">
+                                </div>
+                                <div class="form-group">
+                                    <label for="prodi">Program Studi</label>
+                                    <input type="text" id="prodi" placeholder="Nama prodi">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="semester">Semester</label>
+                                    <input type="text" id="semester" placeholder="Semester ke-">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat / Domisili</label>
+                                <textarea id="alamat" placeholder="Alamat domisili saat ini"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="btn-save">
+                                <i class="fas fa-save"></i> Simpan Profil
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/profiles.js"></script>
+</body>
+</html>

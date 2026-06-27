@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengalaman - Admin Portofolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/experience.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon"><i class="fas fa-code"></i></div>
+            <div><h2>Porto Admin</h2><span>Control Panel</span></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-label">Menu Utama</div>
+            <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="profiles.html"><i class="fas fa-user-circle"></i> Profil</a>
+            <a href="skills.html"><i class="fas fa-code"></i> Skills</a>
+            <a href="experience.html" class="active"><i class="fas fa-briefcase"></i> Pengalaman</a>
+            <a href="projects.html"><i class="fas fa-folder-open"></i> Proyek</a>
+            <div class="nav-label" style="margin-top:16px">Lainnya</div>
+            <a href="/"><i class="fas fa-globe"></i> Lihat Website</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 id="page-title">Pengalaman</h1>
+                <p id="page-subtitle">Kelola data pengalaman kerja & organisasi</p>
+            </div>
+            <div class="topbar-right">
+                <div class="admin-badge">
+                    <div class="avatar" id="admin-avatar">A</div>
+                    <span id="admin-name">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="page-header">
+                <div>
+                    <h2>Daftar Pengalaman</h2>
+                    <p>Tambah, edit, atau hapus data pengalaman Anda</p>
+                </div>
+                <button class="btn btn-primary" id="btn-add">
+                    <i class="fas fa-plus"></i> Tambah Pengalaman
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Posisi</th>
+                                <th>Perusahaan / Organisasi</th>
+                                <th>Durasi</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="experience-tbody">
+                            <tr><td colspan="5" class="loading"><div class="spinner"></div> Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL TAMBAH/EDIT -->
+    <div class="modal-overlay" id="experience-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Tambah Pengalaman</h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="experience-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="posisi">Posisi / Jabatan *</label>
+                            <input type="text" id="posisi" placeholder="Contoh: Web Developer" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="perusahaan">Perusahaan / Organisasi *</label>
+                            <input type="text" id="perusahaan" placeholder="Nama perusahaan" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="durasi">Durasi *</label>
+                        <input type="text" id="durasi" placeholder="Contoh: Jan 2023 - Des 2023" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi">Deskripsi Pekerjaan</label>
+                        <textarea id="deskripsi" placeholder="Tuliskan tanggung jawab dan pencapaian..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">Batal</button>
+                <button class="btn btn-primary" id="btn-submit" form="experience-form" type="submit">
+                    <i class="fas fa-save"></i> Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/experience.js"></script>
+</body>
+</html>

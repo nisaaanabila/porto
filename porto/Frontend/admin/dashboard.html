@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Admin Portofolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon"><i class="fas fa-code"></i></div>
+            <div>
+                <h2>Porto Admin</h2>
+                <span>Control Panel</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-label">Menu Utama</div>
+            <a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="profiles.html"><i class="fas fa-user-circle"></i> Profil</a>
+            <a href="skills.html"><i class="fas fa-code"></i> Skills</a>
+            <a href="experience.html"><i class="fas fa-briefcase"></i> Pengalaman</a>
+            <a href="projects.html"><i class="fas fa-folder-open"></i> Proyek</a>
+            <div class="nav-label" style="margin-top:16px">Lainnya</div>
+            <a href="/"><i class="fas fa-globe"></i> Lihat Website</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- Topbar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 id="page-title">Dashboard</h1>
+                <p id="page-subtitle">Selamat datang di panel admin</p>
+            </div>
+            <div class="topbar-right">
+                <div class="admin-badge">
+                    <div class="avatar" id="admin-avatar">A</div>
+                    <span id="admin-name">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="page-content">
+
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div>
+                    <h2>Halo, <span id="welcome-name">Admin</span>! 👋</h2>
+                    <p>Kelola konten portofolio Anda dari panel ini.</p>
+                    <div class="quick-links">
+                        <a href="profiles.html" class="quick-link"><i class="fas fa-user-edit"></i> Edit Profil</a>
+                        <a href="projects.html" class="quick-link"><i class="fas fa-plus"></i> Tambah Proyek</a>
+                        <a href="/" class="quick-link" target="_blank"><i class="fas fa-eye"></i> Lihat Website</a>
+                    </div>
+                </div>
+                <i class="fas fa-rocket banner-icon"></i>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fas fa-briefcase"></i></div>
+                    <div class="stat-info">
+                        <h3 id="stat-experiences">-</h3>
+                        <p>Total Pengalaman</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-folder-open"></i></div>
+                    <div class="stat-info">
+                        <h3 id="stat-projects">-</h3>
+                        <p>Total Proyek</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon amber"><i class="fas fa-code"></i></div>
+                    <div class="stat-info">
+                        <h3 id="stat-skills">-</h3>
+                        <p>Total Skills</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-info">
+                        <h3>Active</h3>
+                        <p>Status Website</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-clock" style="color:#2563eb;margin-right:8px"></i>Aktivitas Terbaru</h3>
+                    </div>
+                    <div class="card-body" style="padding:0 24px">
+                        <div id="activity-list">
+                            <div class="loading"><div class="spinner"></div> Memuat...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-link" style="color:#2563eb;margin-right:8px"></i>Akses Cepat</h3>
+                    </div>
+                    <div class="card-body">
+                        <div style="display:flex;flex-direction:column;gap:10px">
+                            <a href="profiles.html" class="btn btn-secondary" style="justify-content:flex-start">
+                                <i class="fas fa-user-circle"></i> Kelola Profil
+                            </a>
+                            <a href="skills.html" class="btn btn-secondary" style="justify-content:flex-start">
+                                <i class="fas fa-code"></i> Kelola Skills
+                            </a>
+                            <a href="experience.html" class="btn btn-secondary" style="justify-content:flex-start">
+                                <i class="fas fa-briefcase"></i> Kelola Pengalaman
+                            </a>
+                            <a href="projects.html" class="btn btn-secondary" style="justify-content:flex-start">
+                                <i class="fas fa-folder-open"></i> Kelola Proyek
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

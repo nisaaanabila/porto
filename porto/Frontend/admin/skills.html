@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Admin Portofolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/skills.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon"><i class="fas fa-code"></i></div>
+            <div><h2>Porto Admin</h2><span>Control Panel</span></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-label">Menu Utama</div>
+            <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="profiles.html"><i class="fas fa-user-circle"></i> Profil</a>
+            <a href="skills.html" class="active"><i class="fas fa-code"></i> Skills</a>
+            <a href="experience.html"><i class="fas fa-briefcase"></i> Pengalaman</a>
+            <a href="projects.html"><i class="fas fa-folder-open"></i> Proyek</a>
+            <div class="nav-label" style="margin-top:16px">Lainnya</div>
+            <a href="/"><i class="fas fa-globe"></i> Lihat Website</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 id="page-title">Skills</h1>
+                <p id="page-subtitle">Kelola daftar keahlian & teknologi</p>
+            </div>
+            <div class="topbar-right">
+                <div class="admin-badge">
+                    <div class="avatar" id="admin-avatar">A</div>
+                    <span id="admin-name">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="page-header">
+                <div>
+                    <h2>Daftar Skills</h2>
+                    <p>Tambah, edit, atau hapus data keahlian Anda</p>
+                </div>
+                <button class="btn btn-primary" id="btn-add">
+                    <i class="fas fa-plus"></i> Tambah Skill
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nama Skill</th>
+                                <th>Icon Class (FontAwesome)</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="skills-tbody">
+                            <tr><td colspan="4" class="loading"><div class="spinner"></div> Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL TAMBAH/EDIT -->
+    <div class="modal-overlay" id="skill-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Tambah Skill</h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="skill-form">
+                    <div class="form-group">
+                        <label for="nama_skill">Nama Skill *</label>
+                        <input type="text" id="nama_skill" placeholder="Contoh: Python, JavaScript" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="icon_class">Icon Class (FontAwesome)</label>
+                        <input type="text" id="icon_class" placeholder="Contoh: fab fa-python">
+                        <small style="color:#64748b;font-size:11px;margin-top:4px;display:block">
+                            Cari icon di <a href="https://fontawesome.com/icons" target="_blank" style="color:#2563eb">fontawesome.com</a>. 
+                            Contoh: <code>fab fa-python</code>, <code>fas fa-database</code>
+                        </small>
+                    </div>
+                    <!-- Preview Icon -->
+                    <div style="display:flex;align-items:center;gap:12px;padding:16px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0">
+                        <div class="skill-icon-preview" id="icon-preview-box">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span style="font-size:13px;color:#64748b">Preview icon</span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">Batal</button>
+                <button class="btn btn-primary" id="btn-submit" form="skill-form" type="submit">
+                    <i class="fas fa-save"></i> Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/skills.js"></script>
+</body>
+</html>
