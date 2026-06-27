@@ -13,7 +13,7 @@
 <body>
   <!-- Navbar -->
   <nav id="navbar">
-    <a href="Frontend/admin/login.html" class="logo-container">
+    <a href="#home" class="logo-container">
       <div class="logo-icon">A</div>
       <span class="logo-text">ANISA</span>
     </a>
@@ -23,8 +23,12 @@
       <li><a href="#projects" class="nav-link">Projects</a></li>
       <!-- <li><a href="#services" class="nav-link">Services</a></li> -->
       <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li class="mobile-only"><a href="Frontend/admin/login.html" class="nav-link"><i class="fas fa-user-shield"></i> Login Admin</a></li>
     </ul>
-    <a href="#contact" class="btn-talk">Let's Talk</a>
+    <div class="nav-actions">
+      <a href="Frontend/admin/login.html" class="btn-login-nav"><i class="fas fa-user-shield"></i> Login Admin</a>
+      <a href="#contact" class="btn-talk">Let's Talk</a>
+    </div>
     <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
   </nav>
 
