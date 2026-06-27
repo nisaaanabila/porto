@@ -4,88 +4,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio - Raihan Agil Maulana</title>
+  <title>Portofolio - Anisa Ayu Nabila Putri Ariyanto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="icon" href="Frontend/utama/assets/img/ logo.png" type="image/x-icon">
+  <link rel="icon" href="Frontend/utama/img/gambar-title.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="Frontend/utama/css/style.css" />
 </head>
 
 <body>
   <!-- Navbar -->
   <nav id="navbar">
-    <a href="Frontend/admin/login.html" class="logo">Agil.</a>
+    <a href="Frontend/admin/login.html" class="logo-container">
+      <div class="logo-icon">A</div>
+      <span class="logo-text">ANISA</span>
+    </a>
     <ul id="navMenu">
       <li><a href="#home" class="nav-link active">Home</a></li>
       <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
+      <!-- <li><a href="#services" class="nav-link">Services</a></li> -->
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
+    <a href="#contact" class="btn-talk">Let's Talk</a>
     <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="hero-content" id="hero-content">
-      <div class="loading-skeleton">Memuat profil...</div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge" id="hero-badge">PORTFOLIO</div>
+        <h1 id="hero-title">HAY! I'M <span id="hero-name">ANISA</span></h1>
+        <div class="typing-text" id="hero-typing">I'M A DEVELOPER</div>
+        <p id="hero-desc">Loading profile information...</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">GET IN TOUCH <i class="fas fa-arrow-right"></i></a>
+          <div class="social-links">
+            <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-area">
+        <div class="circle-lines-bg"></div>
+        <div class="hero-image-frame">
+          <img src="Frontend/utama/img/gambar-hero.png" alt="Anisa Ayu" id="hero-avatar" />
+        </div>
+        <div class="sphere sphere-1"></div>
+        <div class="sphere sphere-2"></div>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about">
-    <h2 class="section-title">Tentang Saya</h2>
-    <div class="about-content">
-      <div class="about-img">
-        <img id="profile-photo" src="" alt="Foto Profil" style="display:none; width:100%; border-radius:50%;" />
-        <div class="placeholder-img" id="photo-placeholder"><i class="fas fa-user"></i></div>
+    <div class="container about-grid">
+      <div class="about-img-area">
+        <div class="about-deco-spiral"></div>
+        <div class="about-deco-ring"></div>
+        <div class="about-img-frame">
+          <img id="profile-photo" src="" alt="Foto Profil" style="display:none;" />
+          <div class="placeholder-img" id="photo-placeholder"><i class="fas fa-user"></i></div>
+        </div>
       </div>
-      <div class="about-text" id="about-text">
-        <!-- Diisi oleh JS -->
+      <div class="about-text-content">
+        <span class="badge">ABOUT ME</span>
+        <h2 id="about-title">I AM AVAILABLE FOR <br><span>BACKEND & WEB DEVELOPMENT</span> PROJECTS</h2>
+        <div id="about-text">
+          <p>Loading...</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-num" id="stat-projects">0</div>
+            <div class="stat-label">Projects Done</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" id="stat-skills">0</div>
+            <div class="stat-label">Skills Mastered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" id="stat-semester">-</div>
+            <div class="stat-label">Semester</div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary">GET IN TOUCH <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
 
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="projects-header-flex">
+        <div>
+          <span class="badge">MY WORK</span>
+          <h2 class="section-title">RECENT <span>PROJECT</span></h2>
+        </div>
+      </div>
+      <div class="projects-grid" id="projects-container">
+        <div class="loading-skeleton">Memuat proyek...</div>
+      </div>
+      <div class="pagination-dots" id="project-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section
+  <section id="services">
+    <div class="container">
+      <span class="badge">SERVICES</span>
+      <h2 class="section-title">SERVICES I AM <span>PROVIDING</span></h2>
+      <div class="services-grid" id="services-container">
+        <div class="glass-panel service-card">
+          <div class="service-icon-box"><i class="fas fa-laptop-code"></i></div>
+          <h3>Frontend Development</h3>
+          <p>Creating responsive, modern, and high-performance user interfaces using HTML, CSS, JavaScript, and standard libraries.</p>
+        </div>
+        <div class="glass-panel service-card">
+          <div class="service-icon-box"><i class="fas fa-server"></i></div>
+          <h3>Backend Development</h3>
+          <p>Building secure and scalable APIs, managing databases, and implementing business logic using Python and Flask.</p>
+        </div>
+        <div class="glass-panel service-card">
+          <div class="service-icon-box"><i class="fas fa-database"></i></div>
+          <h3>Database Management</h3>
+          <p>Structuring solid relational databases, optimizing queries, and ensuring data integrity with MySQL.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
   <!-- Skills Section -->
-  <section id="skills" class="bg-white">
-    <h2 class="section-title">Keahlian</h2>
-    <div class="skills-grid" id="skills-container">
-      <!-- Diisi oleh JS -->
+  <section id="skills">
+    <div class="container">
+      <span class="badge">MY SKILLS</span>
+      <h2 class="section-title">KEAHLIAN <span>TEKNIS</span></h2>
+      <div class="skills-grid" id="skills-container">
+        <div class="loading-skeleton">Memuat keahlian...</div>
+      </div>
     </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience">
-    <h2 class="section-title">Pengalaman</h2>
-    <div class="timeline" id="experience-container">
-      <!-- Diisi oleh JS -->
-    </div>
-  </section>
-
-  <!-- Projects Section (STRUKTUR BARU UNTUK OVERLAY) -->
-  <section id="projects" class="bg-white">
-    <h2 class="section-title">Proyek Saya</h2>
-    <div class="projects-grid" id="projects-container">
-      <!-- Template Project Card akan di-render di sini oleh JS -->
+    <div class="container">
+      <span class="badge">MY JOURNEY</span>
+      <h2 class="section-title">PENGALAMAN <span>SAYA</span></h2>
+      <div class="timeline" id="experience-container">
+        <div class="loading-skeleton">Memuat pengalaman...</div>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2 class="section-title">Hubungi Saya</h2>
-    <div class="contact-container">
-      <p id="contact-email-display">Email akan dimuat dari database...</p>
-      <form class="contact-form" id="contactForm">
-        <input type="text" id="contactName" placeholder="Nama Anda" required />
-        <input type="email" id="contactEmail" placeholder="Email Anda" required />
-        <textarea id="contactMessage" placeholder="Pesan Anda" required></textarea>
-        <button type="submit" class="btn" id="sendBtn">Kirim Pesan</button>
-      </form>
+    <div class="container contact-container">
+      <div class="contact-info-panel">
+        <span class="badge">CONTACT</span>
+        <h2>LET'S WORK <span>TOGETHER</span></h2>
+        <p>Have an exciting project you want to build or want to collaborate? Feel free to reach out using the form or direct email.</p>
+        <div class="contact-details">
+          <div class="contact-detail-card">
+            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-detail-text">
+              <h4>Email</h4>
+              <p id="contact-email-display">Loading email...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-panel" style="width: 100%;">
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="contactName" placeholder="Nama Anda" required />
+          <input type="email" id="contactEmail" placeholder="Email Anda" required />
+          <textarea id="contactMessage" placeholder="Pesan Anda" required></textarea>
+          <button type="submit" class="btn-primary" id="sendBtn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; <span id="current-year"></span> Raihan Agil Maulana. All Rights Reserved.</p>
+    <div class="footer-content">
+      <a href="#" class="footer-logo">ANISA<span>.</span></a>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> Anisa Ayu Nabila Putri Ariyanto. All Rights Reserved.</p>
+    </div>
   </footer>
 
   <!-- Load API Config & Main Script -->

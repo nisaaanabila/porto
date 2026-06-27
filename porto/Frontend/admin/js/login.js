@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Jika sudah login, langsung redirect ke dashboard
     const token = localStorage.getItem('admin_token');
     if (token) {
-        window.location.href = '/admin/dashboard.html';
+        window.location.href = 'dashboard.html';
         return;
     }
 

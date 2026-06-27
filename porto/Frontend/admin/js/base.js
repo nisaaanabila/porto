@@ -47,7 +47,7 @@ async function handleLogout() {
     } catch (e) { /* ignore */ }
     localStorage.removeItem('admin_token');
     localStorage.removeItem('admin_user');
-    window.location.href = '/admin/login.html';
+    window.location.href = 'login.html';
 }
 
 /**

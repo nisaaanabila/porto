@@ -32,7 +32,7 @@ async function apiFetch(endpoint, options = {}) {
     if (response.status === 401) {
         localStorage.removeItem('admin_token');
         localStorage.removeItem('admin_user');
-        window.location.href = '/admin/login.html';
+        window.location.href = 'admin/login.html';
         return;
     }
 
@@ -45,7 +45,7 @@ async function apiFetch(endpoint, options = {}) {
 async function requireAuth() {
     const token = localStorage.getItem('admin_token');
     if (!token) {
-        window.location.href = '/admin/login.html';
+        window.location.href = 'admin/login.html';
         return false;
     }
     return true;
